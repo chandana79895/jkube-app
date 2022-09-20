@@ -1,0 +1,56 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      jkube.io/git-url: https://github.com/chandana79895/WebAppEx.git
+      jkube.io/git-commit: e7c5f3087c24630d72f23f2eb2759992f5c527db
+      jkube.io/git-branch: main
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/jkube-app
+      jkube.io/scm-tag: HEAD
+    labels:
+      app: jkube-app
+      provider: jkube
+      version: 0.0.1-SNAPSHOT
+      group: io.getstarted.spring
+    name: jkube-app
+  spec:
+    replicas: 1
+    revisionHistoryLimit: 2
+    selector:
+      matchLabels:
+        app: jkube-app
+        provider: jkube
+        group: io.getstarted.spring
+    template:
+      metadata:
+        annotations:
+          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/jkube-app
+          jkube.io/git-url: https://github.com/chandana79895/WebAppEx.git
+          jkube.io/scm-tag: HEAD
+          jkube.io/git-commit: e7c5f3087c24630d72f23f2eb2759992f5c527db
+          jkube.io/git-branch: main
+        labels:
+          app: jkube-app
+          provider: jkube
+          version: 0.0.1-SNAPSHOT
+          group: io.getstarted.spring
+      spec:
+        containers:
+        - env:
+          - name: KUBERNETES_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: HOSTNAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          image: spring/jkube-app:latest
+          imagePullPolicy: IfNotPresent
+          name: spring-jkube-app
+          securityContext:
+            privileged: false

@@ -1,0 +1,253 @@
+{
+  "apiVersion" : "apps/v1",
+  "kind" : "Deployment",
+  "metadata" : {
+    "annotations" : {
+      "jkube.io/git-branch" : "main",
+      "jkube.io/git-commit" : "e7c5f3087c24630d72f23f2eb2759992f5c527db",
+      "jkube.io/git-url" : "https://github.com/chandana79895/WebAppEx.git",
+      "jkube.io/scm-tag" : "HEAD",
+      "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/jkube-app"
+    },
+    "creationTimestamp" : "2022-09-20T05:47:53Z",
+    "generation" : 2,
+    "labels" : {
+      "app" : "jkube-app",
+      "group" : "io.getstarted.spring",
+      "provider" : "jkube",
+      "version" : "0.0.1-SNAPSHOT"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "apps/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:status" : {
+          "f:conditions" : {
+            "." : { },
+            "k:{\"type\":\"Available\"}" : {
+              "." : { },
+              "f:lastTransitionTime" : { },
+              "f:lastUpdateTime" : { },
+              "f:message" : { },
+              "f:reason" : { },
+              "f:status" : { },
+              "f:type" : { }
+            },
+            "k:{\"type\":\"Progressing\"}" : {
+              "." : { },
+              "f:lastTransitionTime" : { },
+              "f:lastUpdateTime" : { },
+              "f:message" : { },
+              "f:reason" : { },
+              "f:status" : { },
+              "f:type" : { }
+            }
+          },
+          "f:observedGeneration" : { },
+          "f:replicas" : { },
+          "f:unavailableReplicas" : { },
+          "f:updatedReplicas" : { }
+        }
+      },
+      "manager" : "kube-controller-manager",
+      "operation" : "Update",
+      "time" : "2022-09-20T05:47:53Z",
+      "subresource" : "status"
+    }, {
+      "apiVersion" : "apps/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { },
+            "f:jkube.io/scm-tag" : { },
+            "f:jkube.io/scm-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:progressDeadlineSeconds" : { },
+          "f:replicas" : { },
+          "f:revisionHistoryLimit" : { },
+          "f:selector" : { },
+          "f:strategy" : {
+            "f:rollingUpdate" : {
+              "." : { },
+              "f:maxSurge" : { },
+              "f:maxUnavailable" : { }
+            },
+            "f:type" : { }
+          },
+          "f:template" : {
+            "f:metadata" : {
+              "f:annotations" : {
+                "." : { },
+                "f:jkube.io/git-branch" : { },
+                "f:jkube.io/git-commit" : { },
+                "f:jkube.io/git-url" : { },
+                "f:jkube.io/scm-tag" : { },
+                "f:jkube.io/scm-url" : { }
+              },
+              "f:labels" : {
+                "." : { },
+                "f:app" : { },
+                "f:group" : { },
+                "f:provider" : { },
+                "f:version" : { }
+              }
+            },
+            "f:spec" : {
+              "f:containers" : {
+                "k:{\"name\":\"spring-jkube-app\"}" : {
+                  "." : { },
+                  "f:env" : {
+                    "." : { },
+                    "k:{\"name\":\"HOSTNAME\"}" : {
+                      "." : { },
+                      "f:name" : { },
+                      "f:valueFrom" : {
+                        "." : { },
+                        "f:fieldRef" : { }
+                      }
+                    },
+                    "k:{\"name\":\"KUBERNETES_NAMESPACE\"}" : {
+                      "." : { },
+                      "f:name" : { },
+                      "f:valueFrom" : {
+                        "." : { },
+                        "f:fieldRef" : { }
+                      }
+                    }
+                  },
+                  "f:image" : { },
+                  "f:imagePullPolicy" : { },
+                  "f:name" : { },
+                  "f:resources" : { },
+                  "f:securityContext" : {
+                    "." : { },
+                    "f:privileged" : { }
+                  },
+                  "f:terminationMessagePath" : { },
+                  "f:terminationMessagePolicy" : { }
+                }
+              },
+              "f:dnsPolicy" : { },
+              "f:restartPolicy" : { },
+              "f:schedulerName" : { },
+              "f:securityContext" : { },
+              "f:terminationGracePeriodSeconds" : { }
+            }
+          }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2022-09-20T05:47:53Z"
+    } ],
+    "name" : "jkube-app",
+    "namespace" : "default",
+    "resourceVersion" : "360533",
+    "uid" : "9124cd19-4944-459e-8760-aa6c117a9ab3"
+  },
+  "spec" : {
+    "progressDeadlineSeconds" : 600,
+    "replicas" : 1,
+    "revisionHistoryLimit" : 2,
+    "selector" : {
+      "matchLabels" : {
+        "app" : "jkube-app",
+        "group" : "io.getstarted.spring",
+        "provider" : "jkube"
+      }
+    },
+    "strategy" : {
+      "rollingUpdate" : {
+        "maxSurge" : "25%",
+        "maxUnavailable" : "25%"
+      },
+      "type" : "RollingUpdate"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "jkube.io/git-branch" : "main",
+          "jkube.io/git-commit" : "e7c5f3087c24630d72f23f2eb2759992f5c527db",
+          "jkube.io/git-url" : "https://github.com/chandana79895/WebAppEx.git",
+          "jkube.io/scm-tag" : "HEAD",
+          "jkube.io/scm-url" : "https://github.com/spring-projects/spring-boot/jkube-app"
+        },
+        "labels" : {
+          "app" : "jkube-app",
+          "group" : "io.getstarted.spring",
+          "provider" : "jkube",
+          "version" : "0.0.1-SNAPSHOT"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          }, {
+            "name" : "HOSTNAME",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.name"
+              }
+            }
+          } ],
+          "image" : "spring/jkube-app:latest",
+          "imagePullPolicy" : "IfNotPresent",
+          "name" : "spring-jkube-app",
+          "resources" : { },
+          "securityContext" : {
+            "privileged" : false
+          },
+          "terminationMessagePath" : "/dev/termination-log",
+          "terminationMessagePolicy" : "File"
+        } ],
+        "dnsPolicy" : "ClusterFirst",
+        "restartPolicy" : "Always",
+        "schedulerName" : "default-scheduler",
+        "securityContext" : { },
+        "terminationGracePeriodSeconds" : 30
+      }
+    }
+  },
+  "status" : {
+    "conditions" : [ {
+      "lastTransitionTime" : "2022-09-20T05:47:53Z",
+      "lastUpdateTime" : "2022-09-20T05:47:53Z",
+      "message" : "Deployment does not have minimum availability.",
+      "reason" : "MinimumReplicasUnavailable",
+      "status" : "False",
+      "type" : "Available"
+    }, {
+      "lastTransitionTime" : "2022-09-20T06:08:23Z",
+      "lastUpdateTime" : "2022-09-20T06:08:23Z",
+      "message" : "ReplicaSet \"jkube-app-6d68796b89\" has timed out progressing.",
+      "reason" : "ProgressDeadlineExceeded",
+      "status" : "False",
+      "type" : "Progressing"
+    } ],
+    "observedGeneration" : 1,
+    "replicas" : 1,
+    "unavailableReplicas" : 1,
+    "updatedReplicas" : 1
+  }
+}
